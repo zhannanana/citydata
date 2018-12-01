@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Dashboard Template for Bootstrap</title>
+    <!-- 引入 ECharts 文件 -->
+    <script src="../../js/echarts.min.js"></script>
+    <script  src="../../js/jquery.min.js"></script>
+    <!-- Bootstrap core CSS -->
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../../css/dashboard.css" rel="stylesheet">
+    <link href="../../css/theme.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">智慧城市计算数据展示平台</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="../index/index-main.html">首页<span class="sr-only">(current)</span></a></li>
+          <li class="active"><a href="traffic-index.html">城市交通<span class="sr-only">(current)</span></a></li>
+          <li><a href="../meteorology/meteorology-index.html">城市气象</a></li>
+          <li><a href="../hydrology/hydrology-index.html">水文计算 </a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </nav>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-9 col-sm-offset-3 col-md-8 col-md-offset-2 main">
+          <h1 class="page-header">北京市出租车载客统计</h1>
+          <!--在下面填充内容-->
+          <div>
+            <div class="row">
+              <div class="col-sm-6" id="main" style="width: 600px;height:400px;"></div>
+              <div class="col-sm-6">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h1 class="panel-title">出行变化规律</h1>
+                  </div>
+                  <div class="panel-body">
+                    <p>
+                      节日：</br>
+                    节日影响出行，这是显而易见的，那么相比普通的日子，
+                    节日里人们需要增加多大幅度的出行资源呢</br>
+                    </p>
+                    <p>
+                    周末：</br>
+                    工作日人们上班、工作出行的非常多，周末人们游玩、
+                    逛街出行也非常多，到底两者谁的影响更大呢</br>
+                    </p>
+                    <p>
+                    天气：</br>
+                    暴雨有可能减少人们的出行，但会增加人们对出租车的使用。
+                      </br></br></br></br></br></br>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../dist/js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <script src="../../assets/js/vendor/holder.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+    <!--loading echarts-->
+    <script type="text/javascript">
+
+        function loadTaxiData(){
+            // 基于准备好的dom，初始化echarts实例
+            var myChart = echarts.init(document.getElementById('main'));
+            // 指定图表的配置项和数据
+            var option = {
+                title : {
+                    text: '9月份出租车载客率',
+                    subtext: '纯属虚构'
+                },
+                tooltip : {
+                    trigger: 'axis'
+                },
+                legend: {
+                    data:['载客率']
+                },
+                toolbox: {
+                    show : true,
+                    feature : {
+                        dataView : {show: true, readOnly: false},
+                        magicType : {show: true, type: ['line', 'bar']},
+                        restore : {show: true},
+                        saveAsImage : {show: true}
+                    }
+                },
+                calculable : true,
+                xAxis : [
+                    {
+                        type : 'category',
+                        data : []
+                    }
+                ],
+                yAxis : [
+                    {
+                        type : 'value'
+                    }
+                ],
+                series : [
+                    {
+                        name:'载客率',
+                        type:'bar',
+                        data:[],
+                        markPoint : {
+                            data : [
+                                {name: 'q5', value: '中秋节', xAxis:22, yAxis:70},
+                                {name: 'q2', value: '暴雨', xAxis:8, yAxis: 65}
+                            ]
+                        },
+                        markLine : {
+                            data : [
+                                {type : 'average', name: '平均值'}
+                            ]
+                        }
+                    },
+                ]
+            };
+            // 使用刚指定的配置项和数据显示图表。
+            myChart.setOption(option);
+            //从ajax获取数据
+            var thedate = [];
+            var rates = [];
+            $.ajax({
+                type: 'get',
+                url: 'taxi.txt',//请求数据的地址
+                dataType: 'json',        //返回数据形式为json
+                success: function (result) {
+                    //请求成功时执行该函数内容，result即为服务器返回的json对象
+                    $.each(result.list, function (index, item) {
+                        thedate.push(item.thedate);    //挨个取出类别并填入类别数组                    
+                        rates.push(item.num);    //挨个取出销量并填入销量数组
+                    });
+                    myChart.setOption({        //加载数据图表
+                        xAxis: {
+                            data: thedate
+                        },
+                        series: [{
+                            // 根据名字对应到相应的系列
+                            name: '载客率',  //显示在上部的标题
+                            data: rates
+                        }]
+                    });
+                },
+                error: function (errorMsg) {
+                    //请求失败时执行该函数
+                    alert("图表请求数据失败!");
+                }
+            });
+        }
+        loadTaxiData();
+
+    </script>
+  </body>
+</html>

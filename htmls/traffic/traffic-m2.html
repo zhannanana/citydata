@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Dashboard Template for Bootstrap</title>
+    <!-- 引入 ECharts 文件 -->
+    <script src="../../js/echarts.min.js"></script>
+    <script  src="../../js/jquery.min.js"></script>
+    <!-- Bootstrap core CSS -->
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../dist/css/bootstrap.css" rel="stylesheet">
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../../css/dashboard.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">智慧城市计算数据展示平台</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="../index/index-main.html">首页<span class="sr-only">(current)</span></a></li>
+          <li class="active"><a href="traffic-index.html">城市交通<span class="sr-only">(current)</span></a></li>
+          <li><a href="../meteorology/meteorology-index.html">城市气象</a></li>
+          <li><a href="../hydrology/hydrology-index.html">水文计算 </a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </nav>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li><a href="traffic-index.html">交通首页 <span class="sr-only">(current)</span></a></li>
+            <li><a href="traffic-m1.html">城市交通概况</a></li>
+            <li class="active"><a href="traffic-m2.html">交通与天气</a></li>
+            <li><a href="traffic-m3.html">城市与功能区</a></li>
+            <li><a href="traffic-m4.html">城市拥堵分析</a></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+            <li><a href="">Nav item</a></li>
+            <li><a href="">Nav item again</a></li>
+            <li><a href="">One more nav</a></li>
+            <li><a href="">Another nav item</a></li>
+            <li><a href="">More navigation</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h1 class="page-header">交通与天气</h1>
+          <!--在下面填充内容-->
+          
+            <div class="row">
+            <div class="col-sm-6" id="chart2" style="height:400px;"></div>
+            <div class="col-sm-6">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h2 class="panel-title">出行变化规律</h2>
+                </div>
+                <div class="panel-body">
+                  <p>
+                    节日：</br>
+                    节日影响出行，这是显而易见的，那么相比普通的日子，
+                    节日里人们需要增加多大幅度的出行资源呢</br>
+                  </p>
+                  <p>
+                    周末：</br>
+                    工作日人们上班、工作出行的非常多，周末人们游玩、
+                    逛街出行也非常多，到底两者谁的影响更大呢</br>
+                  </p>
+                  <p>
+                    天气：</br>
+                    暴雨有可能减少人们的出行，但会增加人们对出租车的使用。
+                    </br></br></br></br></br></br>
+                  </p>
+                </div>
+              </div>
+            </div>
+            </div>
+          
+            <div class="row">
+              <div class="col-sm-6" id="chart3" style="height:400px;"></div>
+              <div class="col-sm-6">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h1 class="panel-title">出租车区域占比</h1>
+                  </div>
+                  <div class="panel-body">
+                    <p>
+                      节日：</br>
+                      节日影响出行，这是显而易见的，那么相比普通的日子，
+                      节日里人们需要增加多大幅度的出行资源呢</br>
+                    </p>
+                    <p>
+                      周末：</br>
+                      工作日人们上班、工作出行的非常多，周末人们游玩、
+                      逛街出行也非常多，到底两者谁的影响更大呢</br>
+                    </p>
+                    <p>
+                      天气：</br>
+                      暴雨有可能减少人们的出行，但会增加人们对出租车的使用。
+                      </br></br></br></br></br></br>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../dist/js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <script src="../../assets/js/vendor/holder.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+    <!--loading echarts-->
+    <script type="text/javascript">
+        var upColor = '#ec0000';
+        var upBorderColor = '#8A0000';
+        var downColor = '#00da3c';
+        var downBorderColor = '#008F28';
+        var dataCount = 2e5;
+        var data = generateOHLC(dataCount);
+        var option = {
+            dataset: {
+                source: data
+            },
+            title: {
+                text: 'Data Amount: ' + echarts.format.addCommas(dataCount)
+            },
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'line'
+                }
+            },
+            toolbox: {
+                feature: {
+                    dataZoom: {
+                        yAxisIndex: false
+                    },
+                }
+            },
+            grid: [
+                {
+                    left: '10%',
+                    right: '10%',
+                    bottom: 200
+                },
+                {
+                    left: '10%',
+                    right: '10%',
+                    height: 80,
+                    bottom: 80
+                }
+            ],
+            xAxis: [
+                {
+                    type: 'category',
+                    scale: true,
+                    boundaryGap : false,
+                    // inverse: true,
+                    axisLine: {onZero: false},
+                    splitLine: {show: false},
+                    splitNumber: 20,
+                    min: 'dataMin',
+                    max: 'dataMax'
+                },
+                {
+                    type: 'category',
+                    gridIndex: 1,
+                    scale: true,
+                    boundaryGap : false,
+                    axisLine: {onZero: false},
+                    axisTick: {show: false},
+                    splitLine: {show: false},
+                    axisLabel: {show: false},
+                    splitNumber: 20,
+                    min: 'dataMin',
+                    max: 'dataMax'
+                }
+            ],
+            yAxis: [
+                {
+                    scale: true,
+                    splitArea: {
+                        show: true
+                    }
+                },
+                {
+                    scale: true,
+                    gridIndex: 1,
+                    splitNumber: 2,
+                    axisLabel: {show: false},
+                    axisLine: {show: false},
+                    axisTick: {show: false},
+                    splitLine: {show: false}
+                }
+            ],
+            dataZoom: [
+                {
+                    type: 'inside',
+                    xAxisIndex: [0, 1],
+                    start: 10,
+                    end: 100
+                },
+                {
+                    show: true,
+                    xAxisIndex: [0, 1],
+                    type: 'slider',
+                    bottom: 10,
+                    start: 10,
+                    end: 100,
+                    handleIcon: 'M10.7,11.9H9.3c-4.9,0.3-8.8,4.4-8.8,9.4c0,5,3.9,9.1,8.8,9.4h1.3c4.9-0.3,8.8-4.4,8.8-9.4C19.5,16.3,15.6,12.2,10.7,11.9z M13.3,24.4H6.7V23h6.6V24.4z M13.3,19.6H6.7v-1.4h6.6V19.6z',
+                    handleSize: '105%'
+                }
+            ],
+            visualMap: {
+                show: false,
+                seriesIndex: 1,
+                dimension: 6,
+                pieces: [{
+                    value: 1,
+                    color: upColor
+                }, {
+                    value: -1,
+                    color: downColor
+                }]
+            },
+            series: [
+                {
+                    type: 'candlestick',
+                    itemStyle: {
+                        color: upColor,
+                        color0: downColor,
+                        borderColor: upBorderColor,
+                        borderColor0: downBorderColor
+                    },
+                    encode: {
+                        x: 0,
+                        y: [1, 4, 3, 2]
+                    }
+                },
+                {
+                    name: 'Volumn',
+                    type: 'bar',
+                    xAxisIndex: 1,
+                    yAxisIndex: 1,
+                    itemStyle: {
+                        color: '#7fbe9e'
+                    },
+                    large: true,
+                    encode: {
+                        x: 0,
+                        y: 5
+                    }
+                }
+            ]
+        };
+        var myChart = echarts.init(document.getElementById('chart2'));
+        myChart.setOption(option);
+        function generateOHLC(count) {
+            var data = [];
+
+            var xValue = +new Date(2011, 0, 1);
+            var minute = 60 * 1000;
+            var baseValue = Math.random() * 12000;
+            var boxVals = new Array(4);
+            var dayRange = 12;
+
+            for (var i = 0; i < count; i++) {
+                baseValue = baseValue + Math.random() * 20 - 10;
+
+                for (var j = 0; j < 4; j++) {
+                    boxVals[j] = (Math.random() - 0.5) * dayRange + baseValue;
+                }
+                boxVals.sort();
+
+                var idxRandom = Math.random();
+                var openIdx = Math.round(Math.random() * 3);
+                var closeIdx = Math.round(Math.random() * 2);
+                if (closeIdx === openIdx) {
+                    closeIdx++;
+                }
+                var volumn = boxVals[3] * (1000 + Math.random() * 500);
+
+                // ['open', 'close', 'lowest', 'highest', 'volumn']
+                // [1, 4, 3, 2]
+                data[i] = [
+                    echarts.format.formatTime('yyyy-MM-dd\nhh:mm:ss', xValue += minute),
+                    +boxVals[openIdx].toFixed(2), // open
+                    +boxVals[3].toFixed(2), // highest
+                    +boxVals[0].toFixed(2), // lowest
+                    +boxVals[closeIdx].toFixed(2),  // close
+                    volumn.toFixed(0),
+                    getSign(data, i, +boxVals[openIdx], +boxVals[closeIdx], 4) // sign
+                ];
+            }
+
+            return data;
+
+            function getSign(data, dataIndex, openVal, closeVal, closeDimIdx) {
+                var sign;
+                if (openVal > closeVal) {
+                    sign = -1;
+                }
+                else if (openVal < closeVal) {
+                    sign = 1;
+                }
+                else {
+                    sign = dataIndex > 0
+                        // If close === open, compare with close of last record
+                        ? (data[dataIndex - 1][closeDimIdx] <= closeVal ? 1 : -1)
+                        // No record of previous, set to be positive
+                        : 1;
+                }
+
+                return sign;
+            }
+        }
+        generateOHLC(200);
+
+    </script>
+    <script type="text/javascript">
+        option = {
+            title: {
+                text: '出租车区域占比',
+                subtext: '纯属虚构',
+                top: 10,
+                left: 10
+            },
+            tooltip: {
+                trigger: 'item',
+                backgroundColor : 'rgba(0,0,250,0.2)'
+            },
+            legend: {
+                type: 'scroll',
+                bottom: 10,
+                data: (function (){
+                    var list = [];
+                    for (var i = 1; i <=28; i++) {
+                        list.push(i + 2000 + '');
+                    }
+                    return list;
+                })()
+            },
+            visualMap: {
+                top: 'middle',
+                right: 10,
+                color: ['red', 'yellow'],
+                calculable: true
+            },
+            radar: {
+                indicator : [
+                    { text: 'IE8-', max: 400},
+                    { text: 'IE9+', max: 400},
+                    { text: 'Safari', max: 400},
+                    { text: 'Firefox', max: 400},
+                    { text: 'Chrome', max: 400}
+                ]
+            },
+            series : (function (){
+                var series = [];
+                for (var i = 1; i <= 28; i++) {
+                    series.push({
+                        name:'浏览器（数据纯属虚构）',
+                        type: 'radar',
+                        symbol: 'none',
+                        lineStyle: {
+                            width: 1
+                        },
+                        emphasis: {
+                            areaStyle: {
+                                color: 'rgba(0,250,0,0.3)'
+                            }
+                        },
+                        data:[
+                            {
+                                value:[
+                                    (40 - i) * 10,
+                                    (38 - i) * 4 + 60,
+                                    i * 5 + 10,
+                                    i * 9,
+                                    i * i /2
+                                ],
+                                name: i + 2000 + ''
+                            }
+                        ]
+                    });
+                }
+                return series;
+            })()
+        };
+        var myChart = echarts.init(document.getElementById('chart3'));
+        myChart.setOption(option);
+    </script>
+  </body>
+</html>
