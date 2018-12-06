@@ -56,23 +56,8 @@
   </nav>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-sm-3 col-md-2 sidebar">
-          <ul class="nav nav-sidebar">
-            <li><a href="traffic-index.html">交通首页 <span class="sr-only">(current)</span></a></li>
-            <li><a href="traffic-m1.html">城市交通概况</a></li>
-            <li class="active"><a href="traffic-m2.html">交通与天气</a></li>
-            <li><a href="traffic-m3.html">城市与功能区</a></li>
-            <li><a href="traffic-m4.html">城市拥堵分析</a></li>
-          </ul>
-          <ul class="nav nav-sidebar">
-            <li><a href="">Nav item</a></li>
-            <li><a href="">Nav item again</a></li>
-            <li><a href="">One more nav</a></li>
-            <li><a href="">Another nav item</a></li>
-            <li><a href="">More navigation</a></li>
-          </ul>
-        </div>
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+        <div class="col-sm-9 col-sm-offset-3 col-md-8 col-md-offset-2 main">
           <h1 class="page-header">交通与天气</h1>
           <!--在下面填充内容-->
           
@@ -85,51 +70,13 @@
                 </div>
                 <div class="panel-body">
                   <p>
-                    节日：</br>
-                    节日影响出行，这是显而易见的，那么相比普通的日子，
-                    节日里人们需要增加多大幅度的出行资源呢</br>
-                  </p>
-                  <p>
-                    周末：</br>
-                    工作日人们上班、工作出行的非常多，周末人们游玩、
-                    逛街出行也非常多，到底两者谁的影响更大呢</br>
-                  </p>
-                  <p>
                     天气：</br>
                     暴雨有可能减少人们的出行，但会增加人们对出租车的使用。
-                    </br></br></br></br></br></br>
+                    </br></br></br></br></br></br></br></br></br></br></br></br>
                   </p>
                 </div>
               </div>
             </div>
-            </div>
-          
-            <div class="row">
-              <div class="col-sm-6" id="chart3" style="height:400px;"></div>
-              <div class="col-sm-6">
-                <div class="panel panel-default">
-                  <div class="panel-heading">
-                    <h1 class="panel-title">出租车区域占比</h1>
-                  </div>
-                  <div class="panel-body">
-                    <p>
-                      节日：</br>
-                      节日影响出行，这是显而易见的，那么相比普通的日子，
-                      节日里人们需要增加多大幅度的出行资源呢</br>
-                    </p>
-                    <p>
-                      周末：</br>
-                      工作日人们上班、工作出行的非常多，周末人们游玩、
-                      逛街出行也非常多，到底两者谁的影响更大呢</br>
-                    </p>
-                    <p>
-                      天气：</br>
-                      暴雨有可能减少人们的出行，但会增加人们对出租车的使用。
-                      </br></br></br></br></br></br>
-                    </p>
-                  </div>
-                </div>
-              </div>
             </div>
           
 
@@ -354,79 +301,6 @@
         }
         generateOHLC(200);
 
-    </script>
-    <script type="text/javascript">
-        option = {
-            title: {
-                text: '出租车区域占比',
-                subtext: '纯属虚构',
-                top: 10,
-                left: 10
-            },
-            tooltip: {
-                trigger: 'item',
-                backgroundColor : 'rgba(0,0,250,0.2)'
-            },
-            legend: {
-                type: 'scroll',
-                bottom: 10,
-                data: (function (){
-                    var list = [];
-                    for (var i = 1; i <=28; i++) {
-                        list.push(i + 2000 + '');
-                    }
-                    return list;
-                })()
-            },
-            visualMap: {
-                top: 'middle',
-                right: 10,
-                color: ['red', 'yellow'],
-                calculable: true
-            },
-            radar: {
-                indicator : [
-                    { text: 'IE8-', max: 400},
-                    { text: 'IE9+', max: 400},
-                    { text: 'Safari', max: 400},
-                    { text: 'Firefox', max: 400},
-                    { text: 'Chrome', max: 400}
-                ]
-            },
-            series : (function (){
-                var series = [];
-                for (var i = 1; i <= 28; i++) {
-                    series.push({
-                        name:'浏览器（数据纯属虚构）',
-                        type: 'radar',
-                        symbol: 'none',
-                        lineStyle: {
-                            width: 1
-                        },
-                        emphasis: {
-                            areaStyle: {
-                                color: 'rgba(0,250,0,0.3)'
-                            }
-                        },
-                        data:[
-                            {
-                                value:[
-                                    (40 - i) * 10,
-                                    (38 - i) * 4 + 60,
-                                    i * 5 + 10,
-                                    i * 9,
-                                    i * i /2
-                                ],
-                                name: i + 2000 + ''
-                            }
-                        ]
-                    });
-                }
-                return series;
-            })()
-        };
-        var myChart = echarts.init(document.getElementById('chart3'));
-        myChart.setOption(option);
     </script>
   </body>
 </html>

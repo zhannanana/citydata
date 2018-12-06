@@ -57,36 +57,25 @@
 </nav>
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-8 col-md-offset-2 main">
-      <h1 class="page-header">北京市出租车数据微观分析</h1>
+    <div class="col-sm-9 col-sm-offset-3 col-md-8 col-md-offset-2 main">
+      <h1 class="page-header">北京市区域拥堵状况</h1>
       <!--在下面填充内容-->
-      <ul class="nav nav-tabs">
-        <li><a href="traffic-index.html">出租车日流量变化</a></li>
-        <li class="active"><a href="traffic-m4.html">城市拥堵分析</a></li>
-        <li><a href="traffic-m5.html">出租车用户行为分析</a></li>
-      </ul>
       <div>
 
-
-
-        <div class="panel panel-success">
+        <div class="panel panel-primary">
           <div class="panel-heading">
-            <h4>北京市一天内各个时段平均车速</h4>
+            <h4>区域拥堵排名</h4>
           </div>
           <div class="panel-body">
             <div class="row">
               <div class="col-sm-6">
-                <div id="chart2" style="width:600px; height:400px"></div>
-              </div>
-              <div class="col-sm-6">
-                <!--4月份每日各时段平均车速排行-->
                 <table class="table table-responsive table-hover table-striped table-bordered">
-                  <h3>日均拥堵时段排名</h3>
+                  <h3>2015年北京区域拥堵排名</h3>
                   数据来自北京2015出租车交通数据
                   <thead>
                   <tr>
                     <th>排名</th>
-                    <th>时段</th>
+                    <th>区域</th>
                     <th>拥堵指数</th>
                     <th>平均速度</th>
                   </tr>
@@ -94,76 +83,191 @@
                   <tbody>
                   <tr>
                     <th>1</th>
-                    <th>8:00-9:00</th>
+                    <th>西城区</th>
                     <th>1.46</th>
                     <th>28.74</th>
                   </tr>
                   <tr>
                     <th>2</th>
-                    <th>7:00-8:00</th>
+                    <th>东城区</th>
                     <th>1.42</th>
                     <th>28.68</th>
                   </tr>
                   <tr>
                     <th>3</th>
-                    <th>17:00-18:00</th>
+                    <th>朝阳区</th>
                     <th>1.39</th>
                     <th>35.6</th>
                   </tr>
                   <tr>
                     <th>4</th>
-                    <th>18:00-19:00</th>
+                    <th>昌平区</th>
                     <th>1.36</th>
                     <th>28.06</th>
                   </tr>
                   <tr>
                     <th>5</th>
-                    <th>10:00-11:00</th>
+                    <th>海淀区</th>
                     <th>1.28</th>
                     <th>39.25</th>
                   </tr>
                   <tr>
                     <th>6</th>
-                    <th>19:00-20:00</th>
+                    <th>通州区</th>
                     <th>1.24</th>
                     <th>30.18</th>
                   </tr>
                   <tr>
                     <th>7</th>
-                    <th>13:00-14:00</th>
+                    <th>丰台区</th>
                     <th>1.2</th>
                     <th>40.92</th>
                   </tr>
                   <tr>
                     <th>8</th>
-                    <th>15:00-14:00</th>
+                    <th>大兴区</th>
                     <th>1.18</th>
                     <th>46.08</th>
                   </tr>
                   </tbody>
                 </table>
               </div>
+              <div class="col-sm-6" id="main" style="width: 600px;height:400px;"></div>
             </div>
-
           </div>
         </div>
-
-        <div class="panel panel-danger">
+        <div class="panel panel-success">
           <div class="panel-heading">
-            <h4>节假日工作日车速对比</h4>
+            <h4>白天出租车分布区域占比</h4>
           </div>
           <div class="panel-body">
             <div class="row">
               <div class="col-sm-6">
-                <div id="chart4" style="width:600px; height:400px"></div>
+                <table class="table table-responsive table-hover table-striped table-bordered">
+                  <h3>2015年北京出租车占比</h3>
+                  数据来自北京2015出租车交通数据
+                  <thead>
+                  <tr>
+                    <th>排名</th>
+                    <th>区域</th>
+                    <th>占比</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <th>1</th>
+                    <th>西城区</th>
+                    <th>1.46</th>
+                  </tr>
+                  <tr>
+                    <th>2</th>
+                    <th>东城区</th>
+                    <th>1.42</th>
+                  </tr>
+                  <tr>
+                    <th>3</th>
+                    <th>朝阳区</th>
+                    <th>1.39</th>
+                  </tr>
+                  <tr>
+                    <th>4</th>
+                    <th>昌平区</th>
+                    <th>1.36</th>
+                  </tr>
+                  <tr>
+                    <th>5</th>
+                    <th>海淀区</th>
+                    <th>1.28</th>
+                  </tr>
+                  <tr>
+                    <th>6</th>
+                    <th>通州区</th>
+                    <th>1.24</th>
+                  </tr>
+                  <tr>
+                    <th>7</th>
+                    <th>丰台区</th>
+                    <th>1.2</th>
+                  </tr>
+                  <tr>
+                    <th>8</th>
+                    <th>大兴区</th>
+                    <th>1.18</th>
+                  </tr>
+                  </tbody>
+                </table>
               </div>
+              <div class="col-sm-6" id="chart3" style="width: 600px;height:400px;"></div>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-danger">
+          <div class="panel-heading">
+            <h4>夜间出租车分布区域占比</h4>
+          </div>
+          <div class="panel-body">
+            <div class="row">
               <div class="col-sm-6">
-                <div id="chart3" style="width:600px; height:400px"></div>
+                <table class="table table-responsive table-hover table-striped table-bordered">
+                  <h3>2015年北京出租车占比</h3>
+                  数据来自北京2015出租车交通数据
+                  <thead>
+                  <tr>
+                    <th>排名</th>
+                    <th>区域</th>
+                    <th>占比</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <th>1</th>
+                    <th>西城区</th>
+                    <th>1.46</th>
+                  </tr>
+                  <tr>
+                    <th>2</th>
+                    <th>东城区</th>
+                    <th>1.42</th>
+                  </tr>
+                  <tr>
+                    <th>3</th>
+                    <th>朝阳区</th>
+                    <th>1.39</th>
+                  </tr>
+                  <tr>
+                    <th>4</th>
+                    <th>昌平区</th>
+                    <th>1.36</th>
+                  </tr>
+                  <tr>
+                    <th>5</th>
+                    <th>海淀区</th>
+                    <th>1.28</th>
+                  </tr>
+                  <tr>
+                    <th>6</th>
+                    <th>通州区</th>
+                    <th>1.24</th>
+                  </tr>
+                  <tr>
+                    <th>7</th>
+                    <th>丰台区</th>
+                    <th>1.2</th>
+                  </tr>
+                  <tr>
+                    <th>8</th>
+                    <th>大兴区</th>
+                    <th>1.18</th>
+                  </tr>
+                  </tbody>
+                </table>
               </div>
+              <div class="col-sm-6" id="chart4" style="width: 600px;height:400px;"></div>
             </div>
           </div>
         </div>
       </div>
+
     </div>
   </div>
 </div>
@@ -256,171 +360,151 @@
         myChart.setOption(option);
     });
 </script>
-
-<!--4月车速-->
 <script type="text/javascript">
-    var myChart2 = echarts.init(document.getElementById('chart2'));
-    var xx=[];
-    var yy=[];
-    $.get('../../data/22points.json', function (result) {
-        $.each(result, function (index, item) {
-            xx.push(item.xx);
-            yy.push(item.yy);
-        });
-        myChart2.setOption(option2 = {
-            title: {
-                text: '北京2015年4月道路速度变化'
-            },
-            tooltip: {
-                trigger: 'axis'
-            },
-            xAxis: {
-                data: xx
-            },
-            yAxis: {
-                splitLine: {
-                    show: false
-                }
-            },
-            toolbox: {
-                left: 'center',
-                feature: {
-                    dataZoom: {
-                        yAxisIndex: 'none'
-                    },
-                    restore: {},
-                    saveAsImage: {}
-                }
-            },
-            dataZoom: [{
-                startValue: '2014-06-01'
-            }, {
-                type: 'inside'
-            }],
-            visualMap: {
-                top: 10,
-                right: 10,
-                pieces: [{
-                    gt: 0,
-                    lte: 10,
-                    color: '#dc2f15'
-                }, {
-                    gt: 10,
-                    lte: 20,
-                    color: '#e7824a'
-                }, {
-                    gt: 20,
-                    lte: 30,
-                    color: '#afd663'
-                }, {
-                    gt: 30,
-                    lte: 50,
-                    color: '#1c7e1d'
-                }, {
-                    gt: 50,
-                    color: '#70ba00'
-                }],
-                outOfRange: {
-                    color: '#70ba00'
-                }
-            },
-            series: {
-                name: 'Beijing AQI',
-                type: 'line',
-                data: yy,
-                markLine: {
-                    silent: true,
-                    data: [{
-                        yAxis: 50
-                    }, {
-                        yAxis: 100
-                    }, {
-                        yAxis: 150
-                    }, {
-                        yAxis: 200
-                    }, {
-                        yAxis: 300
-                    }]
-                }
-            }
-        });
-    });
-</script>
-<!--4月每周平均车速-->
-<script type="text/javascript">
-    var myChart3 = echarts.init(document.getElementById('chart3'));
     option3 = {
         title: {
-            text: '星期平均车速'
-        },
-        xAxis: {
-            type: 'category',
-            data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-        },
-        yAxis: {
-            type: 'value',
-            max:35,
-            min:20,
-        },
-        series: [{
-            data: [25, 26, 27, 26.4, 27.8, 25.5, 24.5],
-            type: 'bar'
-        }]
-    };
-    myChart3.setOption(option3)
-
-</script>
-<!--工作日与节假日车速-->
-<script type="text/javascript">
-    var myChart4 = echarts.init(document.getElementById('chart4'));
-    option4 = {
-        title: {
-            text: '工作日与节假日车速'
+            text: '出租车区域占比',
+            subtext: '纯属虚构',
+            top: 10,
+            left: 10
         },
         tooltip: {
-            trigger: 'axis'
+            trigger: 'item',
+            backgroundColor : 'rgba(0,0,250,0.2)'
         },
         legend: {
-            data:['工作日','节假日']
+            type: 'scroll',
+            bottom: 10,
+            data: (function (){
+                var list = [];
+                for (var i = 1; i <=28; i++) {
+                    list.push(i + 2000 + '');
+                }
+                return list;
+            })()
         },
-        grid: {
-            left: '3%',
-            right: '4%',
-            bottom: '3%',
-            containLabel: true
+        visualMap: {
+            top: 'middle',
+            right: 10,
+            color: ['red', 'yellow'],
+            calculable: true
         },
-        toolbox: {
-            feature: {
-                saveAsImage: {}
+        radar: {
+            indicator : [
+                { text: 'IE8-', max: 400},
+                { text: 'IE9+', max: 400},
+                { text: 'Safari', max: 400},
+                { text: 'Firefox', max: 400},
+                { text: 'Chrome', max: 400}
+            ]
+        },
+        series : (function (){
+            var series = [];
+            for (var i = 1; i <= 28; i++) {
+                series.push({
+                    name:'浏览器（数据纯属虚构）',
+                    type: 'radar',
+                    symbol: 'none',
+                    lineStyle: {
+                        width: 1
+                    },
+                    emphasis: {
+                        areaStyle: {
+                            color: 'rgba(0,250,0,0.3)'
+                        }
+                    },
+                    data:[
+                        {
+                            value:[
+                                (40 - i) * 10,
+                                (38 - i) * 4 + 60,
+                                i * 5 + 10,
+                                i * 9,
+                                i * i /2
+                            ],
+                            name: i + 2000 + ''
+                        }
+                    ]
+                });
             }
-        },
-        xAxis: {
-            type: 'category',
-            boundaryGap: false,
-            data: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]
-        },
-        yAxis: {
-            type: 'value'
-        },
-        series: [
-            {
-                name:'工作日',
-                type:'line',
-                stack: '总量',
-                data:[43,42,43.5,43,49,50,52,55,50,49,40,35,36,37,34,33,35,37,36,39,40,45,46,47]
-            },
-            {
-                name:'节假日',
-                type:'line',
-                stack: '总量',
-                data:[43,42,43.5,44,45,46,48,51,50,49,40,35,36,37,34,33,35,37,36,39,40,45,46,47]
-            }
-        ]
+            return series;
+        })()
     };
-
-    myChart4.setOption(option4)
-
+    var myChart3 = echarts.init(document.getElementById('chart3'));
+    myChart3.setOption(option3);
 </script>
-
+<script type="text/javascript">
+    option4 = {
+        title: {
+            text: '出租车区域占比',
+            subtext: '纯属虚构',
+            top: 10,
+            left: 10
+        },
+        tooltip: {
+            trigger: 'item',
+            backgroundColor : 'rgba(0,0,250,0.2)'
+        },
+        legend: {
+            type: 'scroll',
+            bottom: 10,
+            data: (function (){
+                var list = [];
+                for (var i = 1; i <=28; i++) {
+                    list.push(i + 2000 + '');
+                }
+                return list;
+            })()
+        },
+        visualMap: {
+            top: 'middle',
+            right: 10,
+            color: ['red', 'yellow'],
+            calculable: true
+        },
+        radar: {
+            indicator : [
+                { text: '东城', max: 400},
+                { text: '西城', max: 400},
+                { text: '朝阳区', max: 400},
+                { text: '昌平区', max: 400},
+                { text: '其他', max: 400}
+            ]
+        },
+        series : (function (){
+            var series = [];
+            for (var i = 1; i <= 28; i++) {
+                series.push({
+                    name:'区域占比',
+                    type: 'radar',
+                    symbol: 'none',
+                    lineStyle: {
+                        width: 1
+                    },
+                    emphasis: {
+                        areaStyle: {
+                            color: 'rgba(0,250,0,0.3)'
+                        }
+                    },
+                    data:[
+                        {
+                            value:[
+                                (40 - i) * 10,
+                                (38 - i) * 4 + 60,
+                                i * 5 + 10,
+                                i * 9,
+                                i * i /2
+                            ],
+                            name: i + 2000 + ''
+                        }
+                    ]
+                });
+            }
+            return series;
+        })()
+    };
+    var myChart4 = echarts.init(document.getElementById('chart4'));
+    myChart4.setOption(option4);
+</script>
 </body>
 </html>
